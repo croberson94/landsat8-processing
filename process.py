@@ -4,7 +4,7 @@ import cv2
 
 def print_img():
 	#load the color image in grayscale 0
-	location =  '/Users/Charles/Downloads/LC80250392016062LGN00.tar/LC80250392016062LGN00/LC80250392016062LGN00_B2.TIF'
+	#location = '*.tif'
 	img = cv2.imread(location)
 	cv2.imshow('image_1',img)
 	b, g, r = cv2.split(img)
