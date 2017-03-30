@@ -6,10 +6,7 @@ import os
 #function that walks through the os, varies with user
 
 def img_array():
-	rootdir = 'C:/Users/Charles/Downloads/LC80250392016062LGN00.tar/LC80250392016062LGN00'
-	for fileList in os.walk(rootdir):
-		for file in fileList:
-			print("%s" % file)
+	#label the current directory
 	return
 
 def print_img():
@@ -29,6 +26,10 @@ def print_img():
 	return
 
 def main():
-	#print_img()
+	# download the images
+	# create the image array
+	my_array = img_array()
+	# create the printable image
+	# print_img(my_array)
 	img_array()
 main()
