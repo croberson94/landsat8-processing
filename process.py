@@ -7,9 +7,9 @@ import os
 
 def img_array():
 	rootdir = 'C:/Users/Charles/Downloads/LC80250392016062LGN00.tar/LC80250392016062LGN00'
-	for subdir, dirs, files in os.walk(rootdir)
-		for file in files:
-			print os.path.join(subdir, file)
+	for filename in os.listdir(rootdir):
+		if filename.endswith (".TIF"):
+			print(os.path.join(rootdir, filename)
 	my_array = []
 	return
 
