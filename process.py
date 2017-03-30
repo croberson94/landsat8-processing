@@ -8,6 +8,7 @@ import os
 def img_array():
 	#label the current directory
 	return
+	#use os.walk or another module thats good for iteration
 
 def print_img():
 	#load the color image in grayscale 0
