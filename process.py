@@ -1,10 +1,14 @@
 import numpy as np
 import cv2
-#from matplotlib import pyplot as plt
+import os
 
 #function that creates 3D array
 #function that walks through the os, varies with user
-  
+
+def img_array():
+	my_array = []
+	return
+
 def print_img():
 	#load the color image in grayscale 0
 	#location = '*.tif'
