@@ -7,10 +7,9 @@ import os
 
 def img_array():
 	rootdir = 'C:/Users/Charles/Downloads/LC80250392016062LGN00.tar/LC80250392016062LGN00'
-	for filename in os.listdir(rootdir):
-		if filename.endswith (".TIF"):
-			print(os.path.join(rootdir, filename)
-	my_array = []
+	for fileList in os.walk(rootdir):
+		for file in fileList:
+			print("%s" % file)
 	return
 
 def print_img():
@@ -30,5 +29,6 @@ def print_img():
 	return
 
 def main():
-	print_img()
+	#print_img()
+	img_array()
 main()
