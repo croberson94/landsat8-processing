@@ -6,10 +6,15 @@ import os
 #function that walks through the os, varies with user
 
 def img_array():
-	#label the current directory
+	path = 'c:/Users/Charles/Desktop/landsat8_images'
+	for (path, dirs, files) in os.walk(path):
+		#print(path)
+		#print(files)
+		for file in files:
+			if file.endswith('.TIF'):
+				print(file)
 	return
-	#use os.walk or another module thats good for iteration
-
+	
 def print_img():
 	#load the color image in grayscale 0
 	#location = '*.tif'
@@ -27,10 +32,5 @@ def print_img():
 	return
 
 def main():
-	# download the images
-	# create the image array
-	my_array = img_array()
-	# create the printable image
-	# print_img(my_array)
 	img_array()
 main()
