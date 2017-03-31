@@ -12,7 +12,8 @@ def img_array():
 		#print(files)
 		for file in files:
 			if file.endswith('.TIF'):
-				print(file)
+				thefile = os.path.join(path, file)
+				print(thefile)
 	return
 	
 def print_img():
