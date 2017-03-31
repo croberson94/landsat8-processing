@@ -36,7 +36,7 @@ def print_img(my_array):
 		while (k != 27):
 			k = cv2.waitKey()
 		cv2.destroyAllWindows()
-		return
+	return
 
 def main():
 	my_array = img_array()
