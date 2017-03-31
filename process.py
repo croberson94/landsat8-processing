@@ -23,7 +23,8 @@ def print_img(my_array):
 	for elt in my_array:
 		location = elt
 		img = cv2.imread(location)
-		cv2.imshow('image_1',img)
+		resize_img = cv2.resize(img, (184,184))
+		cv2.imshow('image_1', resize_img)
 		'''
 		b, g, r = cv2.split(img)
 		cv2.imshow('image_2',b)
