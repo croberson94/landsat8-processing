@@ -26,27 +26,32 @@ def print_img(my_array):
 	# create each individual RGB
 	for elt in my_array:
 		location = elt
-		if location.endswith('B2.TIF') or location.endswith('B4.TIF') or location.endswith('B8.TIF'):
-			img = cv2.imread(location)
-			resize_img = cv2.resize(img, (184,184))
-			#cv2.imshow('image_1', resize_img)
-			b, g, r = cv2.split(img)
-			np.concatenate(blue_array, b)
-			np.concatenate(green_array, g)
-			np.concatenate(red_array, r)
-			#cv2.imshow('image_2',b)
-			#cv2.imshow('image_3',g)
-			#cv2.imshow('image_4',r)
-			#k = cv2.waitKey()
-			#press ESC key to close window
-			#while (k != 27):
-				#k = cv2.waitKey()
-			#cv2.destroyAllWindows()
+		img = cv2.imread(location)
+		resize_img = cv2.resize(img, (184,184))
+		#cv2.imshow('image_1', resize_img)
+		'''
+		b, g, r = cv2.split(img)
+		np.concatenate(blue_array, b)
+		np.concatenate(green_array, g)
+		np.concatenate(red_array, r)
+		'''
+		#cv2.imshow('image_2',b)
+		#cv2.imshow('image_3',g)
+		#cv2.imshow('image_4',r)
+		k = cv2.waitKey()
+		#press ESC key to close window
+		'''
+		while (k != 27):
+			k = cv2.waitKey()
+		cv2.destroyAllWindows()
+		'''
 	return
 
 def main():
 	my_array = img_array()
 	print(my_array)
-	print(my_array.size)
-	print_img(my_array)
+	#print(np.sort(my_array, axis= None))
+	#print(my_array.size)
+	# Problem with error in CV2, insufficient memory for band 8
+	#print_img(my_array)
 main()
