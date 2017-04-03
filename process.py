@@ -6,17 +6,16 @@ import os
 #function that walks through the os, varies with user
 
 def img_array():
+	# State the path where the images are located 
 	path = 'c:/Users/Charles/Desktop/landsat8_images'
-	my_array = []
+	my_array = np.array([])
+	
+	# Walk through the path and grab the file location names
 	for (path, dirs, files) in os.walk(path):
-		#print(path)
-		#print(files)
 		for file in files:
 			if file.endswith('.TIF'):
 				thefile = os.path.join(path, file)
-				#print(thefile)
-				my_array.append(thefile)
-	print(my_array)
+				my_array = np.append(my_array, thefile)
 	return (my_array)
 	
 def print_img(my_array):
@@ -40,5 +39,7 @@ def print_img(my_array):
 
 def main():
 	my_array = img_array()
-	print_img(my_array)
+	print(my_array)
+	print(my_array.size)
+	#print_img(my_array)
 main()
