@@ -5,9 +5,9 @@ import os
 #function that creates 3D array
 #function that walks through the os, varies with user
 
-def img_array():
+def img_array(path = 'c:/Users/Charles/Desktop/landsat8_images'):
 	# State the path where the images are located 
-	path = 'c:/Users/Charles/Desktop/landsat8_images'
+	#path = '/home/croberson/LSAT8'
 	my_array = np.array([])
 	
 	# Walk through the path and grab the file location names
@@ -19,15 +19,10 @@ def img_array():
 	return (my_array)
 	
 def print_img(my_array):
-	# create the emtpy RGB array for images
-	red_array = np.array([])
-	green_array = np.array([])
-	blue_array = np.array([])
-	# create each individual RGB
 	for elt in my_array:
 		location = elt
 		img = cv2.imread(location)
-		resize_img = cv2.resize(img, (184,184))
+		#resize_img = cv2.resize(img, (184,184))
 		#cv2.imshow('image_1', resize_img)
 		'''
 		b, g, r = cv2.split(img)
@@ -38,7 +33,7 @@ def print_img(my_array):
 		#cv2.imshow('image_2',b)
 		#cv2.imshow('image_3',g)
 		#cv2.imshow('image_4',r)
-		k = cv2.waitKey()
+		#k = cv2.waitKey()
 		#press ESC key to close window
 		'''
 		while (k != 27):
@@ -48,10 +43,7 @@ def print_img(my_array):
 	return
 
 def main():
-	my_array = img_array()
+	path = 'c:/Users/Charles/Desktop/landsat8_images'
+	my_array = img_array(path)
 	print(my_array)
-	#print(np.sort(my_array, axis= None))
-	#print(my_array.size)
-	# Problem with error in CV2, insufficient memory for band 8
-	#print_img(my_array)
 main()
