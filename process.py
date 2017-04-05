@@ -19,8 +19,16 @@ def img_array(path = 'c:/Users/Charles/Desktop/landsat8_images'):
 	return (my_array)
 	
 def print_img(my_array):
+	# Traverse the array
 	for elt in my_array:
 		location = elt
+			'''
+			# band 2 test
+			if location.endswith('B2.TIF'):
+				img = cv2.imread(location)
+				b, g, r = cv2.split(img)
+				cv2.imshow('blue_pic', b)
+			'''
 		img = cv2.imread(location)
 		#resize_img = cv2.resize(img, (184,184))
 		#cv2.imshow('image_1', resize_img)
@@ -43,7 +51,12 @@ def print_img(my_array):
 	return
 
 def main():
+	# State the path where the images are located
 	path = 'c:/Users/Charles/Desktop/landsat8_images'
+	
+	# Create the array
 	my_array = img_array(path)
+	
+	# Print the final image
 	print(my_array)
 main()
