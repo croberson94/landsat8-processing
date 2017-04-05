@@ -19,15 +19,30 @@ def img_array(path = 'c:/Users/Charles/Desktop/landsat8_images'):
 	return (my_array)
 	
 def print_img(my_array):
-	# Traverse the array
+	# Define array clusters
+	blues = np.array([])
+	greens = np.array([])
+	reds = np.array([])
 	for elt in my_array:
 		location = elt
+		# band 2 test
+		if location.endswith('B2.TIF'):
+			#stack the images based on color
+			img = cv2.imread(location)
+			b, g, r = cv2.split(img)
+			b = np.stack((b, b))
+			g = np.stack((g, g))
+			r = np.stack((r, r))
+			# see what the stacks are
+			print(b)
+			print(g)
+			print(r)
+			# create a sample image based off one band
+			return
 			'''
-			# band 2 test
-			if location.endswith('B2.TIF'):
-				img = cv2.imread(location)
-				b, g, r = cv2.split(img)
-				cv2.imshow('blue_pic', b)
+			cv2.imshow('blue', b)
+			cv2.imshow('green', g)
+			cv2.imshow('red', r)
 			'''
 		img = cv2.imread(location)
 		#resize_img = cv2.resize(img, (184,184))
@@ -57,6 +72,9 @@ def main():
 	# Create the array
 	my_array = img_array(path)
 	
-	# Print the final image
+	# Print the array
 	print(my_array)
+	
+	# Print the image
+	print_img(my_array)
 main()
