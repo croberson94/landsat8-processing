@@ -1,23 +1,26 @@
 import numpy as np
 import cv2
 import os
+import sys
+'''
+Adding a docstring as a placeholder for future development of this code.
+'''
 
 #function that creates 3D array
 #function that walks through the os, varies with user
 
-def img_array():
-	path = 'c:/Users/Charles/Desktop/landsat8_images'
-	my_array = []
-	for (path, dirs, files) in os.walk(path):
-		#print(path)
-		#print(files)
-		for file in files:
-			if file.endswith('.TIF'):
-				thefile = os.path.join(path, file)
-				#print(thefile)
-				my_array.append(thefile)
-	print(my_array)
-	return (my_array)
+def img_array(path = 'c:/Users/Charles/Desktop/landsat8_images'):
+    my_array = []
+    for (path, dirs, files) in os.walk(path):
+    #print(path)
+    #print(files)
+    for file in files:
+	if file.endswith('.TIF'):
+	  thefile = os.path.join(path, file)
+	  #print(thefile)
+	  my_array.append(thefile)
+    print(my_array)
+    return (my_array)
 	
 def print_img(my_array):
 	for elt in my_array:
@@ -39,6 +42,11 @@ def print_img(my_array):
 		return
 
 def main():
-	my_array = img_array()
-	print_img(my_array)
-main()
+   print 'Processing images.....'
+   my_array = img_array(sys.argv[1])
+   print 'Getting ready to display'
+   print_img(my_array)
+   print '...done'
+
+if __name__=='__main__':
+    main()
