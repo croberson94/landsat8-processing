@@ -19,8 +19,8 @@ def	img_array(path='c:/Users/Charles/Desktop/landsat8_images'):
 	
 def	print_img(my_array):
 	#Define array clusters
-	path='/home/melrobin/research/chrism/landsat8-processing/LSAT8/'
-	#path='c:/Users/Charles/Desktop/landsat8_images'
+	#path='/home/melrobin/research/chrism/landsat8-processing/LSAT8/'
+	path='c:/Users/Charles/Desktop/landsat8_images'
 	blues=np.array([])
 	greens=np.array([])
 	reds=np.array([])
@@ -29,19 +29,24 @@ def	print_img(my_array):
 	img_green=cv2.imread(path+image_files[1])
 	img_blue=cv2.imread(path+image_files[2])
 	#We need to verify the shape of the images to ensure integrity
-	#print(img_red.shape,img_green.shape,img_blue.shape)
+	#print img_red.shape, img_green.shape, img_blue.shape
+	img_red = cv2.imread("C:/Users/Charles/Desktop/landsat8_images/LC80250392016062LGN00_B2.TIF", 0)
+	print(img_red.shape)
+	img_green = cv2.imread("C:/Users/Charles/Desktop/landsat8_images/LC80250392016062LGN00_B4.TIF", 0)
+	print(img_green.shape)
+	img_zero = img_red - img_green
+	print(img_zero.shape)
 	return
 
 def	main():
-	#Statethepathwheretheimagesarelocated
-	path='/home/melrobin/research/chrism/landsat8-processing/LSAT8'
-	#path='c:/Users/Charles/Desktop/landsat8_images'
-	#Createthearray
+	#State the path where the images are located
+	#path='/home/melrobin/research/chrism/landsat8-processing/LSAT8'
+	path='c:/Users/Charles/Desktop/landsat8_images'
+	
+	#Create the array
 	my_array=img_array(path)
 	
-	#Printthearray
+	#Print the array
 	print_img(my_array)
-	
-	#Printtheimage
-#	print_img(my_array)
+
 main()
