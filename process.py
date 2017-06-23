@@ -24,12 +24,11 @@ def print_img(my_array):
     greens = np.array([])
     reds = np.array([])
     image_files=['LC80250392016062LGN00_B2.TIF','LC80250392016062LGN00_B8.TIF','LC80250392016062LGN00_B8.TIF']   
-    pdb.set_trace()
     img_red   = cv2.imread(path+image_files[0])
-    img_green = cv2.imread(image_files[1])
-    img_blue  = cv2.imread(image_files[2])
+    img_green = cv2.imread(path+image_files[1])
+    img_blue  = cv2.imread(path+image_files[2])
 #We need to verify the shape of the images to ensure integrity
-    print img_red.shape,img_green,shape,img_blue.shape
+    print img_red.shape,img_green.shape,img_blue.shape
     return
 
 def main():
