@@ -38,7 +38,11 @@ def	print_img(my_array,path):
 	
 	# if reading with cv2, use 1 for color, 0 for grayscale, -1 for alpha 
 	img_band2 = cv2.imread(path+'LC80250392017096LGN00_B2.TIF', 1)
-	print(img_band2.shape)
+        #Allocate and fill an output array
+        final_picture=np.empty(img_band2.shape)
+        final_picture[:,:,0]=img_red[:,:,0]
+        final_picture[:,:,1]=img_green[:,:,0]
+        final_picture[:,:,2]=img_blue[:,:,0]
 	# if 1 is chosen, image will have three channels, split required?
 	
 	# Resize the band if needed to view the image before saving
