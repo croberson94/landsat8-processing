@@ -38,6 +38,7 @@ def	print_img(my_array):
 	# if reading with cv2, use 1 for color, 0 for grayscale, -1 for alpha 
 	img_band2 = cv2.imread("C:/Users/Charles/Desktop/LSAT8/LC80250392016062LGN00_B2.TIF", 1)
 	print(img_band2.shape)
+	# if 1 is chosen, image will have three channels, split required?
 	
 	# Resize the band if needed to view the image before saving
 	small_band2 = cv2.resize(img_band2, (500,500))
